@@ -12,4 +12,15 @@ public class MobManagerBehaviour : MonoBehaviour {
     private void Awake() {
         instance = this;
     }
+
+    private void Start() {
+        StartCoroutine(SpawnMobs());
+    }
+
+    private IEnumerator SpawnMobs() {
+        while (true) {
+            Instantiate(mobs[0]);
+            yield return new WaitForSecondsRealtime(4);
+        }
+    }
 }
