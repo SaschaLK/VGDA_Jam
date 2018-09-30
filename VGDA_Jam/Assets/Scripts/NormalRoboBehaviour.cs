@@ -9,10 +9,8 @@ public class NormalRoboBehaviour : MonoBehaviour {
     public float maxSpeed;
 
     private Vector2 scienceGuyPosition;
-    private Rigidbody2D mobRB;
 
     private void Start() {
-        mobRB = GetComponent<Rigidbody2D>();
         StartCoroutine(PathRoutine(pathFindingCDTime));
     }
 

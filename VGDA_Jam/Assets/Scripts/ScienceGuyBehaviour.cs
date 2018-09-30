@@ -61,7 +61,8 @@ public class ScienceGuyBehaviour : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter(Collision collision) {
-        
+    private void OnCollisionEnter2D(Collision2D collision) {
+        scienceGuyRB.bodyType = RigidbodyType2D.Kinematic;
+        GameManagerBehaviour.instance.GameOver();
     }
 }
