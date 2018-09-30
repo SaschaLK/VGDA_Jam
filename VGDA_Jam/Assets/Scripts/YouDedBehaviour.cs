@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class YouDedBehaviour : MonoBehaviour {
 
+    public float fadeInSpeed;
+
     private MeshRenderer textMeshRenderer;
     private SpriteRenderer bgMeshRenderer;
     private Color ogTextColor;
@@ -29,12 +31,12 @@ public class YouDedBehaviour : MonoBehaviour {
     }
 
     private IEnumerator YouDedFade() {
-        float tempA;
-        for(int i = 0; i<10; i++) {
-            tempA = textMeshRenderer.material.color.a + Time.deltaTime;
+        float tempA = 0;
+        while(tempA < 1) {
+            tempA += fadeInSpeed;
             textMeshRenderer.material.color = new Color(ogTextColor.r, ogTextColor.g, ogTextColor.b, tempA);
             bgMeshRenderer.material.color = new Color(ogBgColor.r, ogBgColor.g, ogBgColor.b, tempA);
+            yield return new WaitForEndOfFrame();
         }
-        yield return new WaitForSecondsRealtime(1);
     }
 }

@@ -9,6 +9,7 @@ public class GameManagerBehaviour : MonoBehaviour {
 
     private void Awake() {
         instance = this;
+        youDed.SetActive(true);
     }
 
     public void GameOver() {
