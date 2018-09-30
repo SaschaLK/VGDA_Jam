@@ -16,7 +16,7 @@ public class NormalRoboBehaviour : MonoBehaviour {
 
     private void FixedUpdate() {
         //ADD: * Time.fixedTime
-        float step = speed * Time.deltaTime;
+        float step = speed * Time.deltaTime * (Time.fixedTime/2);
         transform.position = Vector2.MoveTowards(transform.position, scienceGuyPosition*1.5f, step);
     }
 
