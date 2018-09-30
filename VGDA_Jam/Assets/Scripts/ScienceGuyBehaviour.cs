@@ -60,4 +60,8 @@ public class ScienceGuyBehaviour : MonoBehaviour {
             dragY = 0;
         }
     }
+
+    private void OnCollisionEnter(Collision collision) {
+        
+    }
 }
